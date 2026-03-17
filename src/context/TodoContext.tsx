@@ -1,4 +1,4 @@
-import {useState, useRef, createContext} from 'react';
+import {useState, useRef, useEffect, createContext} from 'react';
 import type {Form} from "../types/Form.ts";
 
 interface TodoContextType {
@@ -20,8 +20,9 @@ export const TodoProvider = ({ children} : Props) => {
     let lastId = useRef(1);
 
 
+
     const addTodo = (text: string) => {
-        setTodos([{id: lastId.current, text:text, isDone:false}, ...todos])
+        setTodos([{id: lastId.current, text:text, completed:false}, ...todos])
         lastId.current++
     }
 
@@ -32,7 +33,7 @@ export const TodoProvider = ({ children} : Props) => {
 
 
     const toggleTodo = (id: number) => {
-        const toggle = todos.map(e => e.id === id ? {...e, isDone: !e.isDone} : e);
+        const toggle = todos.map(e => e.id === id ? {...e, isDone: !e.completed} : e);
         setTodos(toggle);
     }
 

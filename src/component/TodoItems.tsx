@@ -1,7 +1,11 @@
 import {useTodos} from '../hooks/useTodos'
+import type {Form} from '../types/Form';
 
+interface ItemProps {
+    todos: Form;
+}
 
-const TodoItems = ({todos}) => {
+const TodoItems = ({todos}:ItemProps) => {
 
     const {deleteTodo, toggleTodo} = useTodos();
 

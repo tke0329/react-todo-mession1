@@ -8,7 +8,7 @@ const InputForm = () => {
     const [input, setInput] = useState("");
 
 
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = (e :React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(!input.trim()) return;
         addTodo(input)
