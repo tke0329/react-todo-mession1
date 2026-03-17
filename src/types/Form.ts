@@ -1,6 +1,6 @@
 
 export interface Form {
     id: number
-    text: string
+    todo: string
     completed: boolean
 }
