@@ -27,7 +27,7 @@ export const TodoProvider = ({ children} : Props) => {
 
 
     const addTodo = (text: string) => {
-        setTodos([{id: lastId.current, todo:text , completed:false}, ...todos])
+        setTodos([{id: lastId.current, todo:text , completed:false, date: Date.now()}, ...todos])
         lastId.current++
     }
 
@@ -42,11 +42,12 @@ export const TodoProvider = ({ children} : Props) => {
         setTodos(toggle);
     }
 
+
     const value = {
         todos,
         addTodo ,
         deleteTodo ,
-        toggleTodo
+        toggleTodo,
     }
 
     return <TodoContext.Provider value={value} >{children}</TodoContext.Provider>

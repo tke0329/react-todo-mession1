@@ -1,15 +1,23 @@
 import TodoItems from "./TodoItems.tsx";
 import {useTodos} from "../hooks/useTodos.tsx";
 
+interface filterType {
+    filter: "all" | "active" | "completed"
+}
 
-
-const TodoList = () => {
+const TodoList = ({filter}: filterType) => {
 
     const {todos} = useTodos();
 
+    const filteredTodos = todos.filter((todo) => {
+        if(filter === "active") return !todo.completed;
+        if(filter === "completed") return todo.completed;
+        return true;
+    })
+
     return (
         <ul>
-            {todos.map(e => (
+            {filteredTodos.map(e => (
                 <TodoItems todos={e}/>
             ))}
         </ul>

@@ -22,6 +22,7 @@ const InputForm = () => {
                     type="text"
                     value={input}
                     onChange={e => setInput(e.target.value)}
+                    placeholder="해야 할 일을 입력해!"
                 />
                 <button type="submit">입력</button>
             </form>

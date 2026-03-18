@@ -1,19 +1,29 @@
 import Home from './pages/Home';
-import Form from './pages/Form';
 import List from './pages/List';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Active from './pages/Active';
+import Completed from './pages/Completed';
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 
 
 const App = () => {
 
     return (
-        <BrowserRouter>
+        <>
+            <BrowserRouter>
+        <nav>
+            <Link to="/">메인화면</Link>
+            <Link to="/list/active">진행중인 목록</Link>
+            <Link to="/list/completed">완료된 목록</Link>
+        </nav>
+                <div className="b2">
             <Routes>
-                <Route index element={<Home />}></Route>
-                <Route path="/form" element={<Form />}></Route>
-                <Route path="/list" element={<List />}></Route>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/list/active" element={<Active />}></Route>
+                <Route path="/list/completed" element={<Completed />}></Route>
             </Routes>
+                </div>
         </BrowserRouter>
+        </>
     )
 
 }
