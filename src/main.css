@@ -1,0 +1,85 @@
+/*전역 상태*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    font-size: 2.5rem;
+    border-bottom: 1px solid black;
+}
+
+/* Header 의 폰트 */
+
+header > p {
+    margin: 1rem 0rem 1rem 13rem;
+}
+
+/* nav, input, list 묶어서 관리*/
+
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+/* input, 할 일 목록 List */
+
+h2 {
+    display: flex;
+    margin: 0rem 3rem;
+
+}
+
+.b2 {
+    flex-direction: column;
+}
+
+div > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+/* input & button => form 에 먹일거임 */
+
+.b2 > form {
+    flex-direction: row;
+    padding: 1.5rem;
+}
+
+.b2 > form > button {
+    margin: 3px;
+}
+
+.b2 > form > input {
+    margin: 3px;
+    height: 5rem;
+    width: 30rem;
+}
+
+
+/* 네비게이션 바 (왼쪽)*/
+
+div > nav {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+    padding: 3rem;
+}
+
+div > nav > a {
+    margin: 1rem 1rem;
+    text-decoration: inherit;
+    color: black;
+    font-size: 1.2rem;
+
+}
+
+div > nav > a:hover {
+    color: #808080;
+    border-bottom: 1px solid #808080;
+}
